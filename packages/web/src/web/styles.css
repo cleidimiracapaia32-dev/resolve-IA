@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Sora:wght@500;600;700;800&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme inline {
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+
+  --color-background: #070b14;
+  --color-surface: #0c1322;
+  --color-surface-2: #111a2e;
+  --color-border: #1c2a45;
+  --color-border-strong: #2a3b5e;
+  --color-foreground: #e6edf7;
+  --color-muted: #7c8ba6;
+  --color-primary: #2f7bff;
+  --color-primary-bright: #6aa6ff;
+  --color-primary-foreground: #ffffff;
+  --color-cyan: #22d3ee;
+  --color-success: #22c55e;
+  --color-danger: #f43f5e;
+  --color-warn: #f5b544;
+  --color-ring: #2f7bff;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+  ::selection {
+    background: #2f7bff55;
+  }
+}
+
+@layer components {
+  .grid-bg {
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -10%, #2f7bff2e, transparent 70%),
+      linear-gradient(to right, #1c2a4559 1px, transparent 1px),
+      linear-gradient(to bottom, #1c2a4559 1px, transparent 1px);
+    background-size: 100% 100%, 32px 32px, 32px 32px;
+  }
+  .label-mono {
+    @apply font-mono text-[11px] uppercase tracking-[0.12em] text-muted;
+  }
+  .panel {
+    @apply rounded-md border border-border bg-surface;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.rise {
+  animation: rise 0.45s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
