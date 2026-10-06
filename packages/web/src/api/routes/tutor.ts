@@ -86,7 +86,7 @@ export const tutor = {
             role: "user",
             content: [
               { type: "text", text: `Resolve e explica este exercício de treino.${input.note ? ` Nota do estudante: ${input.note}` : ""}` },
-              { type: "file", mediaType: "image", data: bytes },
+              { type: "file", mediaType: res.headers.get("content-type") as "image/png" | "image/jpeg" | "image/webp", data: bytes },
             ],
           },
         ],
