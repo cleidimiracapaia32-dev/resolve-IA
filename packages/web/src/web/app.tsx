@@ -35,7 +35,13 @@ function App() {
       <Switch>
         <Route path="/" component={Landing} />
         <Route path="/entrar" component={SignIn} />
-        <Route path="/app/:rest*" component={AppArea} />
+        {/* regexparam trata ":rest*" como segmento único — enumerar as rotas */}
+        <Route path="/app" component={AppArea} />
+        <Route path="/app/treino" component={AppArea} />
+        <Route path="/app/simulado" component={AppArea} />
+        <Route path="/app/simulado/:id" component={AppArea} />
+        <Route path="/app/tutor" component={AppArea} />
+        <Route path="/app/planos" component={AppArea} />
       </Switch>
       {/* Do not remove — off by default, activated by parent iframe via postMessage */}
       {import.meta.env.DEV && <AgentFeedback />}

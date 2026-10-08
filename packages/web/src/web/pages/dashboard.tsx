@@ -5,7 +5,7 @@ import { PageHeader } from "../components/app-layout";
 import { Panel, PanelHeader, Stat } from "../components/panel";
 import { useOverview } from "../queries/stats";
 import { useExamList } from "../queries/exams";
-import { PLANS } from "../../api/lib/plan-meta";
+import { PLANS } from "../lib/plan-meta";
 
 function TrendChart({ trend }: { trend: { day: string; rate: number; total: number }[] }) {
   if (trend.length < 2) return <p className="px-5 py-8 text-[13px] text-muted">Faz exercícios em 2 dias diferentes para veres a tua evolução.</p>;

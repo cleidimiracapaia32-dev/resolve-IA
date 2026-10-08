@@ -6,7 +6,7 @@ import { Panel, PanelHeader } from "../components/panel";
 import { useExamList, useStartExam } from "../queries/exams";
 import { useOverview } from "../queries/stats";
 import { CATEGORIES, CATEGORY_META, type Category } from "../../api/lib/exercises";
-import { PLANS } from "../../api/lib/plan-meta";
+import { PLANS } from "../lib/plan-meta";
 import { EXAM_MODES } from "../../api/lib/exam-modes";
 import { cn } from "../lib/utils";
 

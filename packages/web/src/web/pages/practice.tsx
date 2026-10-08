@@ -5,7 +5,7 @@ import { ExerciseCard, Explanation } from "../components/exercise";
 import { fetchNext, useAnswer } from "../queries/practice";
 import { useOverview } from "../queries/stats";
 import { CATEGORIES, CATEGORY_META, type Category, type Exercise } from "../../api/lib/exercises";
-import { PLANS } from "../../api/lib/plan-meta";
+import { PLANS } from "../lib/plan-meta";
 import { cn } from "../lib/utils";
 
 interface Phase {
